@@ -11,7 +11,15 @@ namespace WebApplication3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            
+        }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string search = searchbar.Value.ToString();
+            Label label = new Label();
+            label.Text = search;
         }
     }
 }

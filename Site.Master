@@ -14,7 +14,9 @@
 </head>
 <body>
     
-        <nav class="">
+        
+    
+        <nav class="" >
             <div class="w3-top" id="navheader">
         <div class="w3-bar " style="height: 60px;">
             <div class="w3-bar-item " style="margin: 0; width: 200px;">
@@ -24,7 +26,7 @@
                 <button class=" fa fa-bars" style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;"
                         onclick="drops()" id="dropdn"></button>
                 <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0" id="Demo">
-                    <a href="./userScript/buy.html" class="w3-bar-item w3-button">MUA NGAY</a>
+                    <a href="WebForm4.aspx" class="w3-bar-item w3-button">MUA NGAY</a>
                     <a href="Default.aspx" class="w3-bar-item w3-button">TRANG CHỦ</a>
                     <a href="WebForm3.aspx" class="w3-bar-item w3-button">GIỚI THIỆU</a>
                     <a href="WebForm2.aspx" class="w3-bar-item w3-button">LIÊN HỆ</a>
@@ -43,18 +45,18 @@
 
             <div class="w3-right">
                 <input type="text" class="w3-bar-item w3-input w3-round-xxlarge " placeholder="Search.."
-                       style="margin:10px 0; display: none;" id="searchbar">
-                <button id="close-btn" class="fa fa-close"
+                       style="margin:10px 0; display: none;" id="searchbar" runat="server" >
+                <button id="close-btn" class="fa fa-close" 
                         style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;display: none;"
-                        onclick="searchClose('close-btn')"></button>
-                <button id="search-btn" class="fa fa-search"
+                        onclick="searchClose('close-btn')" ></button>
+                <button id="search-btn" class="fa fa-search" 
                         style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;"
-                        onclick="searchDisplay('search-btn')"></button>
+                        onclick="searchDisplay('search-btn')" ></button>
             </div>
             <a href="WebForm2.aspx" class="w3-bar-item  w3-right" style="margin:10px 20px">LIÊN HỆ </a>
             <div class="w3-bar-item"></div>
             <a href="WebForm3.aspx" class="w3-bar-item  w3-right" style="margin:10px 20px">GIỚI THIỆU</a>
-            <a href="./userScript/buy.html" class="w3-bar-item  " style="margin:10px 20px;font-weight: bold;">SHOP NOW!</a>
+            <a href="WebForm4.aspx" class="w3-bar-item  " style="margin:10px 20px;font-weight: bold;">SHOP NOW!</a>
             <a href="Default.aspx" class="w3-bar-item  w3-right" style="margin:10px 20px;">TRANG CHỦ</a>
 
         </div>
@@ -64,7 +66,7 @@
         <div class="body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
+          
            
         </div>
 
@@ -91,7 +93,9 @@
         </div>
         <div class="w3-quarter w3-center">
             <div style="display: inline-block;color: gray;margin-top: 36px; margin-left:36px;">
-                <p id="foot-tilte">LIÊN HỆ</p>
+                <p id="foot-tilte">
+                    
+                    LIÊN HỆ</p>
                 <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Truyền thông</a></p>
                 <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Thông cáo báo chí</a></p>
                 <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Tin tức sự kiện</a></p>
@@ -113,11 +117,13 @@
             </div>
         </div>
     </div>
+         <!--<Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button"/>-->
      </footer>
         
     <asp:PlaceHolder runat="server">
        
         <%: Scripts.Render("~/userScript/script.js") %>
     </asp:PlaceHolder>
+       
 </body>
 </html>
