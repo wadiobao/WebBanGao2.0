@@ -94,3 +94,9 @@ li{
         display: none;
     }
   }
+
+#searchbar{
+    margin: 10px 0;
+    display: none;
+}
+

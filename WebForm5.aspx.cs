@@ -9,11 +9,13 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication3
 {
-    public partial class SiteMaster : MasterPage
+    public partial class WebForm5 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            listSPDC();
+            string data  = Request.QueryString["data"];
+            chiTiet(data);
+            
         }
 
         private SqlConnection connect(string database)
@@ -22,25 +24,18 @@ namespace WebApplication3
             SqlConnection con = new SqlConnection(constring);
             return con;
         }
-        private void listSPDC()
+
+        private void chiTiet(string data)
         {
             SqlConnection con = connect("demobd");
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from sanpham", con);
+            SqlCommand cmd = new SqlCommand($"Select * from sanpham where ID='{data}'", con);
             SqlDataReader reader = cmd.ExecuteReader();
-            Panel panel = new Panel();
             while (reader.Read())
             {
-                Label label = new Label();
-                label.Text = $"<div style='margin:10px 0;background-color:buttonface;padding-left:10%'>" +
-                    $"<P style='margin:0'>{reader[1].ToString()} </p>" +
-                    $"<p style='margin:0'>Số lượng:{reader[2].ToString()}</p>" +
-                    $"</div>";
-                panel.Controls.Add(label);
+                nsanpham.InnerText=reader[1].ToString();
+                gsanpham.InnerText = reader[2].ToString()+"VNĐ";
             }
-            spdc.Controls.Add(panel);
         }
-
     }
-        
 }

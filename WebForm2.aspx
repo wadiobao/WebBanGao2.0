@@ -22,7 +22,7 @@
         <h1 class="w3-center" style="font-weight: bold; font-size: 48px">
           LIÊN HỆ VỚI CHÚNG TÔI
         </h1>
-        <form action="" method="post" id="myForm" runat="server">
+        <form>
           <label for="fname">Tên cá nhân</label>
           <input class="w3-input" type="text" name="fname" id="" /><br />
           <label for="email">Email</label>

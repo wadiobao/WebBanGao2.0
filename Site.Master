@@ -14,6 +14,8 @@
 </head>
 <body>
     
+      
+    <form runat="server">
         <nav class="">
             <div class="w3-top" id="navheader">
         <div class="w3-bar " style="height: 60px;">
@@ -22,7 +24,7 @@
             </div>
             <div class="w3-dropdown-click w3-right" style="background-color: transparent;" id="dropmenu">
                 <button class=" fa fa-bars" style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;"
-                        onclick="drops()" id="dropdn"></button>
+                        onclick="drops();return false" id="dropdn"></button>
                 <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0" id="Demo">
                     <a href="./userScript/buy.html" class="w3-bar-item w3-button">MUA NGAY</a>
                     <a href="Default.aspx" class="w3-bar-item w3-button">TRANG CHỦ</a>
@@ -31,30 +33,33 @@
                 </div>
             </div>
             <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;width: 20%;"
-                 id="rightMenu">
-                <button onclick="closeRightMenu()" class="w3-bar-item  w3-large;" style="cursor: pointer;">
+                 id="rightMenu" runat="server">
+                <button onclick="closeRightMenu();return false" class="w3-bar-item  w3-large;" style="cursor: pointer;">
                     <p style="display: inline-block;">GIỎ HÀNG</p>
                     <p class="w3-right" style="display: inline-block;font-weight: bold;"> &times;</p>
                 </button>
-                <h3 style="margin-left: 10%;">Giỏ hàng của bạn còn trống. </h3>
+                <h3 id="spdc" style="" runat="server"></h3>
+                <button>Thanh toan</button>
             </div>
             <button class="w3-bar-item  w3-right fa fa-shopping-cart"
-                    style="margin:10px 20px;cursor: pointer;background-color: transparent" onclick="openRightMenu()"></button>
+                    style="margin:10px 20px;cursor: pointer;background-color: transparent" onclick="openRightMenu();return false"></button>
 
             <div class="w3-right">
-                <input type="text" class="w3-bar-item w3-input w3-round-xxlarge " placeholder="Search.."
-                       style="margin:10px 0; display: none;" id="searchbar">
+                <div id="searchbar" style="display:none">
+                <asp:TextBox runat="server" ID="TextBox1" 
+                    CssClass="w3-bar-item w3-input w3-round-xxlarge" placeholder="Search..." Width="80%" style="margin-top: 0px;"></asp:TextBox>
+                 </div>   
                 <button id="close-btn" class="fa fa-close"
                         style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;display: none;"
-                        onclick="searchClose('close-btn')"></button>
+                        onclick="searchClose('close-btn');return false"></button>
                 <button id="search-btn" class="fa fa-search"
                         style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;"
-                        onclick="searchDisplay('search-btn')"></button>
+                        onclick="searchDisplay('search-btn');return false"></button>
             </div>
             <a href="WebForm2.aspx" class="w3-bar-item  w3-right" style="margin:10px 20px">LIÊN HỆ </a>
             <div class="w3-bar-item"></div>
             <a href="WebForm3.aspx" class="w3-bar-item  w3-right" style="margin:10px 20px">GIỚI THIỆU</a>
-            <a href="./userScript/buy.html" class="w3-bar-item  " style="margin:10px 20px;font-weight: bold;">SHOP NOW!</a>
+            <a href="WebForm4.aspx" class="w3-bar-item  " style="margin:10px 20px;font-weight: bold;">SHOP NOW!</a>
             <a href="Default.aspx" class="w3-bar-item  w3-right" style="margin:10px 20px;">TRANG CHỦ</a>
 
         </div>
@@ -62,6 +67,7 @@
         </nav>
 
         <div class="body-content">
+            
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
@@ -119,5 +125,8 @@
        
         <%: Scripts.Render("~/userScript/script.js") %>
     </asp:PlaceHolder>
+               
+    </form>
+       
 </body>
 </html>
