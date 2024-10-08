@@ -133,3 +133,12 @@ function openCity(cityName) {
   function closeRightMenu() {
     document.getElementById("rightMenu").style.display = "none";
   }
+
+function enterSearch(btn, event) {
+    if (document.all) {
+        if (event.keyCode == 13) {
+            event.returnValue = false;
+            event.cancel = true;
+            btn.click();
+        }
+    }
