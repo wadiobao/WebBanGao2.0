@@ -1,4 +1,4 @@
-var slideIndex = 1;
+﻿var slideIndex = 1;
 showDivs(slideIndex);
 
 function plusDivs(n) {
@@ -87,17 +87,23 @@ function searchClose(idsearch){
 }
 
 function increaseQuantity() {
-  let quantityInput = document.querySelector('input[name="quantity"]');
-  let quantity = parseInt(quantityInput.value);
-  quantityInput.value = quantity + 1;
+    var quantityInput = document.getElementById('<%= SoSP.ClientID %>'); // Lấy ID từ ClientID của "soluong"
+    var currentValue = parseInt(quantityInput.value, 10); // Lấy giá trị hiện tại
+    if (!isNaN(currentValue)) { // Kiểm tra nếu là số hợp lệ
+        quantityInput.value = currentValue + 1; // Tăng số lượng lên 1
+    } else {
+        quantityInput.value = 1; // Đặt lại giá trị nếu không hợp lệ
+    }
 }
 
 function decreaseQuantity() {
-  let quantityInput = document.querySelector('input[name="quantity"]');
-  let quantity = parseInt(quantityInput.value);
-  if (quantity > 1) {
-    quantityInput.value = quantity - 1;
-  }
+    var quantityInput = document.getElementById('<%= SoSP.ClientID %>'); // Lấy ID từ ClientID của "soluong"
+    var currentValue = parseInt(quantityInput.value, 10);
+    if (!isNaN(currentValue) && currentValue > 1) { // Giảm chỉ khi lớn hơn 1
+        quantityInput.value = currentValue - 1;
+    } else {
+        quantityInput.value = 1; // Đặt lại giá trị nếu không hợp lệ
+    }
 }
 
 function openCity(cityName) {
@@ -133,12 +139,3 @@ function openCity(cityName) {
   function closeRightMenu() {
     document.getElementById("rightMenu").style.display = "none";
   }
-
-function enterSearch(btn, event) {
-    if (document.all) {
-        if (event.keyCode == 13) {
-            event.returnValue = false;
-            event.cancel = true;
-            btn.click();
-        }
-    }

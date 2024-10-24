@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Optimization;
 using System.Web.UI;
 
-namespace WebApplication3
+namespace BTLWEB2
 {
     public class BundleConfig
     {

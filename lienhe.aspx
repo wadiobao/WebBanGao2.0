@@ -1,67 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="lienhe.aspx.cs" Inherits="WebApplication3.lienhe" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="shortcut icon" type="image/png" href="./img/logo1.png" />
-  <link rel="stylesheet" href="./userScript/style.css">
-
-  <title>Liên hệ</title>
-
-</head>
-<body>
-      <!-- Navbar -->
-<div class="w3-top" id="navheader">
-  <div class="w3-bar " style="height: 60px;">
-    <div class="w3-bar-item " style="margin: 0; width: 200px;">
-      <a href="../index.html"><img src="./img/logo1.png" alt="logo" style="width: 100%;margin-left: 24px;" /></a>
-    </div>
-    <div class="w3-dropdown-click w3-right" style="background-color: transparent;" id="dropmenu">
-      <button class=" fa fa-bars" 
-      style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;"
-      onclick="drops()"
-      ></button>
-      <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0" id="Demo">
-        <a href="./buy.html" class="w3-bar-item w3-button">MUA NGAY</a>
-        <a href="../index.html" class="w3-bar-item w3-button">TRANG CHỦ</a>
-        <a href="./gioithieu.html" class="w3-bar-item w3-button">GIỚI THIỆU</a>
-        <a href="./contract.html" class="w3-bar-item w3-button">LIÊN HỆ</a>
-      </div>
-    </div>
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;width: 20%;"
-        id="rightMenu">
-        <button onclick="closeRightMenu()" class="w3-bar-item  w3-large;" style="cursor: pointer;">
-          <p style="display: inline-block;">GIỎ HÀNG</p>
-          <p class="w3-right" style="display: inline-block;font-weight: bold;"> &times;</p>
-        </button>
-        <h3 style="margin-left: 10%;">Giỏ hàng của bạn còn trống. </h3>
-      </div>
-      <button class="w3-bar-item  w3-right fa fa-shopping-cart"
-        style="margin:10px 20px;cursor: pointer;background-color: transparent" onclick="openRightMenu()"></button>
-    <div class="w3-right">
-      <input type="text" class="w3-bar-item w3-input w3-round-xxlarge " placeholder="Search.."
-        style="margin:10px 0; display: none;" id="searchbar">
-      <button id="close-btn" class="fa fa-close"
-        style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;display: none;"
-        onclick="searchClose('close-btn')"></button>
-      <button id="search-btn" class="fa fa-search"
-        style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;"
-        onclick="searchDisplay('search-btn')"></button>
-    </div>
-    <a href="" class="w3-bar-item  w3-right" style="margin:10px 20px">LIÊN HỆ </a>
-    <div class="w3-bar-item"></div>
-    <a href="./gioithieu.html" class="w3-bar-item  w3-right" style="margin:10px 20px">GIỚI THIỆU</a>
-    <a href="./buy.html" class="w3-bar-item  " style="margin:10px 20px;font-weight: bold;">SHOP NOW!</a>
-    <a href="../index.html" class="w3-bar-item  w3-right" style="margin:10px 20px;">TRANG CHỦ</a>
-  </div>
-</div>
-
-  <div class="w3-container w3-row-padding" style="margin: 150px 2%">
+﻿<%@ Page Title="Lienhe" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LienHe.aspx.cs" Inherits="BTLWEB2.WebForm2" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<div class="w3-container w3-row-padding" style="margin: 150px 2%">
     <div class="w3-half w3-light-grey" style="">
       <div class="w3-card" style="">
         <div>
@@ -83,7 +22,7 @@
         <h1 class="w3-center" style="font-weight: bold; font-size: 48px">
           LIÊN HỆ VỚI CHÚNG TÔI
         </h1>
-        <form action="" method="post" id="myForm" runat="server">
+        <form>
           <label for="fname">Tên cá nhân</label>
           <input class="w3-input" type="text" name="fname" id="" /><br />
           <label for="email">Email</label>
@@ -101,48 +40,4 @@
       </div>
     </div>
   </div>
-
-  <!-- footer -->
-<div class="w3-container w3-row-padding" style="margin-top: 64px;" id="footer">
-  <div class="w3-quarter w3-center">
-    <div style="margin: 24px 36px; color: gray; display:inline-block;">
-      <a href=""><img src="./img/logo1.png" alt="logo" style=""></a>
-      <p>Số điện thoại:0999.999.9999</p>
-      <p>Email: contractVNR@gmail.com</p>
-      <p>Địa chỉ: Trâu Quỳ, Gia Lâm, Hà Nội, Việt nam</p>
-    </div>
-  </div>
-
-  <div class="w3-quarter w3-center">
-    <div style="display: inline-block;color: gray;margin-top: 36px; margin-left:36px;">
-      <p id="foot-tilte" >SẢN PHẨM</p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Việt</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Thái</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Mỹ</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Gạo Ấn Độ</a></p>
-    </div>
-  </div>
-  <div class="w3-quarter w3-center">
-    <div style="display: inline-block;color: gray;margin-top: 36px; margin-left:36px;">
-      <p id="foot-tilte">LIÊN HỆ</p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Truyền thông</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Thông cáo báo chí</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Tin tức sự kiện</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Thư viện</a></p>
-    </div>
-  </div>
-
-  <div class="w3-quarter w3-center">
-    <div style="display: inline-block;color: gray; margin-top: 36px;  margin-left:36px;">
-      <p id="foot-tilte" style=" margin-bottom: 31px;">CÔNG TY TNHH VIETNAM'S RICE</p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Mã số thuế:01354968720</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Ngày thành lập: 15/03/2024</a></p>
-      <p style="margin: 10px 0;"><a href="" style="text-decoration: none;">Lĩnh vực: Nông nghiệp, lương thực phẩm,<br>
-          xuất nhập khẩu lương thực, phát triển nông thôn</a></p>
-    </div>
-  </div>
-</div>
-<script src="userScript/script.js"></script>
-
-</body>
-</html>
+</asp:Content>

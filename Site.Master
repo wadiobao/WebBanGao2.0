@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication3.SiteMaster" %>
+﻿<%@ Master Language="C#"  AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BTLWEB2.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -20,34 +20,36 @@
             <div class="w3-top" id="navheader">
         <div class="w3-bar " style="height: 60px;">
             <div class="w3-bar-item " style="margin: 0; width: 200px;">
-                <a href="Default.aspx"><img src="./img/logo1.png" alt="logo" style="width: 100%;margin-left: 24px;" /></a>
+                <a href="Trangchu.aspx"><img src="./img/logo1.png" alt="logo" style="width: 100%;margin-left: 24px;" /></a>
             </div>
             <div class="w3-dropdown-click w3-right" style="background-color: transparent;" id="dropmenu">
                 <button class=" fa fa-bars" style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;"
                         onclick="drops();return false" id="dropdn"></button>
                 <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0" id="Demo">
-                    <a href="./userScript/buy.html" class="w3-bar-item w3-button">MUA NGAY</a>
-                    <a href="Default.aspx" class="w3-bar-item w3-button">TRANG CHỦ</a>
-                    <a href="WebForm3.aspx" class="w3-bar-item w3-button">GIỚI THIỆU</a>
-                    <a href="WebForm2.aspx" class="w3-bar-item w3-button">LIÊN HỆ</a>
+                    <a href="SanPham.aspx" class="w3-bar-item w3-button">MUA NGAY</a>
+                    <a href="Trangchu.aspx" class="w3-bar-item w3-button">TRANG CHỦ</a>
+                    <a href="ChungToi.aspx" class="w3-bar-item w3-button">GIỚI THIỆU</a>
+                    <a href="LienHe.aspx" class="w3-bar-item w3-button">LIÊN HỆ</a>
+                    <a href="Login.aspx" class="w3-bar-item w3-button" style="color:red">ĐĂNG NHẬP</a>
                 </div>
             </div>
-            <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;width: 20%;"
+            <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;width: 30%;"
                  id="rightMenu" runat="server">
                 <button onclick="closeRightMenu();return false" class="w3-bar-item  w3-large;" style="cursor: pointer;">
                     <p style="display: inline-block;">GIỎ HÀNG</p>
                     <p class="w3-right" style="display: inline-block;font-weight: bold;"> &times;</p>
                 </button>
                 <h3 id="spdc" style="" runat="server"></h3>
-                <button>Thanh toan</button>
+                <h3 id="nosp" style="margin:20px 30%;" visible="false" runat="server">GIỎ HÀNG TRỐNG</h3>
+                <asp:Button ID="ttbtn" runat="server" OnClick="ThanhToan_Click" Text="Thanh toán"/>
             </div>
             <button class="w3-bar-item  w3-right fa fa-shopping-cart"
-                    style="margin:10px 20px;cursor: pointer;background-color: transparent" onclick="openRightMenu();return false"></button>
+                    style="margin:10px 20px;cursor: pointer;background-color: transparent" onclick="openRightMenu();return false" id="shopcart" runat="server"></button>
 
             <div class="w3-right">
                 <div id="searchbar" style="display:none">
-                <asp:TextBox runat="server" ID="TextBox1" 
-                    CssClass="w3-bar-item w3-input w3-round-xxlarge" placeholder="Search..." Width="80%" style="margin-top: 0px;"></asp:TextBox>
+                <asp:TextBox runat="server" ID="search" 
+                    CssClass="w3-bar-item w3-input w3-round-xxlarge" placeholder="Search..." Width="80%" style="margin-top: 0px; "></asp:TextBox>
                  </div>   
                 <button id="close-btn" class="fa fa-close"
                         style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;display: none;"
@@ -56,12 +58,12 @@
                         style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;"
                         onclick="searchDisplay('search-btn');return false"></button>
             </div>
-            <a href="WebForm2.aspx" class="w3-bar-item  w3-right" style="margin:10px 20px">LIÊN HỆ </a>
+            <a href="LienHe.aspx" class="w3-bar-item  w3-right" style="margin:10px 0">LIÊN HỆ </a>
             <div class="w3-bar-item"></div>
-            <a href="WebForm3.aspx" class="w3-bar-item  w3-right" style="margin:10px 20px">GIỚI THIỆU</a>
-            <a href="WebForm4.aspx" class="w3-bar-item  " style="margin:10px 20px;font-weight: bold;">SHOP NOW!</a>
-            <a href="Default.aspx" class="w3-bar-item  w3-right" style="margin:10px 20px;">TRANG CHỦ</a>
-
+            <a href="ChungToi.aspx" class="w3-bar-item  w3-right" style="margin:10px 0">GIỚI THIỆU</a>
+            <a href="SanPham.aspx" class="w3-bar-item  " style="margin:10px 0;font-weight: bold;" id="khnv" runat="server">SHOP NOW!</a>
+            <a href="Trangchu.aspx" class="w3-bar-item  w3-right" style="margin:10px 0;">TRANG CHỦ</a>
+            <a href="Login.aspx" class="w3-bar-item  w3-right" style="margin:10px 0;color:red;padding-left:0;padding-right:0" id="dnbtn" runat="server">ĐĂNG NHẬP</a>
         </div>
     </div>
         </nav>

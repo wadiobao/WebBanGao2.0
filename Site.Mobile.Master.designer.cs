@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication3 {
+namespace BTLWEB2 {
     
     
     public partial class Site_Mobile {

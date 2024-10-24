@@ -7,20 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication3
+namespace BTLWEB2
 {
 
 
-    public partial class lienhe
+    public partial class WebForm2
     {
-
-        /// <summary>
-        /// myForm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm myForm;
     }
 }
