@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Collections;
 
 namespace BTLWEB2
 {
@@ -15,9 +16,22 @@ namespace BTLWEB2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            listHot();
-            listAll();
-
+            string tensp = Request.QueryString["tensp"];
+            if (!IsPostBack && string.IsNullOrEmpty(tensp))
+            {
+                listHot();
+                listAll();
+                LoadDropDownList();
+            }
+            else if (!string.IsNullOrEmpty(tensp))
+            {
+                listSearch(tensp);
+                topsell.InnerText = "Sản phẩm tìm kiếm: "+ tensp;
+                allsp.Visible = false;
+            }
+            
+         
+            
         }
         private SqlConnection connect(string database)
         {
@@ -41,7 +55,7 @@ namespace BTLWEB2
                     $"      <img src='{ResolveUrl( reader[4].ToString())}' loading='lazy' alt='' style='width: 100%;max-height: 300px' class=''>  " +
                     $"     <div style='margin-left: 10px;' >    " +
                     $"     <h3>{reader[2].ToString()}</h3>     " +
-                    $"     <p>túi 1kg</p>    " +
+                    $"     <p>Túi 5kg</p>    " +
                     $"     <p id='price'>{reader[3].ToString()}đ</p>  " +
                     $"     </div>  " +
                     $"   </a> " +
@@ -82,7 +96,7 @@ namespace BTLWEB2
                     $"      <img src='{ResolveUrl( reader[9].ToString())}' loading='lazy' alt='' style='width: 100%;max-height: 300px' class=''>  " +
                     $"     <div style='margin-left: 10px;' >    " +
                     $"     <h3>{reader[2].ToString()}</h3>     " +
-                    $"     <p>túi 1kg</p>    " +
+                    $"     <p>Túi 5kg</p>    " +
                     $"     <p id='price'>{reader[7].ToString()}đ</p>  " +
                     $"     </div>  " +
                     $"   </a> " +
@@ -144,5 +158,106 @@ namespace BTLWEB2
             btn.Controls.Add(pagination); // Thêm điều hướng phân trang vào trang
         }
 
+        private void LoadDropDownList()
+        {
+            //ket noi database
+            SqlConnection con = connect("cthd");
+            con.Open();
+
+            string sql = "select MaLoai,TenLoai from Loai";
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            //thuc thi cau truy van
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            //gan du lieu vao drop list
+            ddlLoai.DataSource = reader;
+            ddlLoai.DataTextField = "TenLoai";
+            ddlLoai.DataValueField = "MaLoai";
+            ddlLoai.DataBind();
+
+            //thêm mục tất cả
+            ddlLoai.Items.Insert(0, new ListItem("Tất cả", ""));
+
+            //dong ketnoi
+            reader.Close();
+            con.Close();
+        }
+
+        protected void ddlLoai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //hien thi listHot
+            listHot();
+            
+            string selectedLoai = ddlLoai.SelectedValue;
+
+            //Kiem tra xem co chon All hay khong
+            if(string .IsNullOrEmpty(selectedLoai) || selectedLoai == "All")
+            {
+                listAll();
+            }
+            else
+            {
+                //ket noi database
+                SqlConnection con = connect("cthd");
+                con.Open();
+
+                //viet cau truy van de truy cap du lieu
+                string sql = "SELECT * FROM SanPham WHERE MaLoai = @ml";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@ml", selectedLoai);
+
+                //Thuc thi cau lenh
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                //Hien thi san pham
+                while (reader.Read())
+                {
+                    Label lbl = new Label();
+                    lbl.Text =
+                        $"<div class='w3-card-2 w3-quarter' style='background-color: white;width:23%;margin:10px;' > " +
+                        $"<a href='ChiTiet.aspx?data={reader[0].ToString()}&loai={reader[1].ToString()}'>" +
+                        $"      <img src='{ResolveUrl(reader[9].ToString())}' loading='lazy' alt='' style='width: 100%;max-height: 300px' class=''>  " +
+                        $"     <div style='margin-left: 10px;' >    " +
+                        $"     <h3>{reader[2].ToString()}</h3>     " +
+                        $"     <p>Túi 5kg</p>    " +
+                        $"     <p id='price'>{reader[7].ToString()}đ</p>  " +
+                        $"     </div>  " +
+                        $"   </a> " +
+                        $"  </div>";
+                    sp.Controls.Add(lbl);
+                }
+                //dong ket noi
+                reader.Close();
+                con.Close();
+            }
+        }
+
+        private void listSearch(string tensp)
+        {
+            
+            SqlConnection con = connect("cthd");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("TimKiemSanPham", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TenSP",tensp);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Label lbl = new Label();
+                lbl.Text =
+                    $"<div class='w3-card-2 w3-quarter' style='width:23%;background-color: white;margin:10px' > " +
+                    $"<a href='ChiTiet.aspx?data={reader[0].ToString()}&loai={reader[1].ToString()}'>" +
+                    $"      <img src='{ResolveUrl(reader[9].ToString())}' loading='lazy' alt='' style='width: 100%;max-height: 300px' class=''>  " +
+                    $"     <div style='margin-left: 10px;' >    " +
+                    $"     <h3>{reader[2].ToString()}</h3>     " +
+                    $"     <p>túi 1kg</p>    " +
+                    $"     <p id='price'>{reader[7].ToString()}đ</p>  " +
+                    $"     </div>  " +
+                    $"   </a> " +
+                    $"  </div>";
+                hot.Controls.Add(lbl);
+            }
+        }
     }
 }

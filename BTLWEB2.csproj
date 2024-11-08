@@ -103,6 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="icon\cash.jpg" />
+    <Content Include="icon\doitra.jpg" />
+    <Content Include="icon\free_deliverd.jpg" />
+    <Content Include="icon\giaohangngaysaukhidat.jpg" />
+    <Content Include="icon\hoadon.jpg" />
+    <Content Include="logo\Logo-MoMo-Circle.jpg" />
     <Content Include="NhanVien\CapNhat.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -226,6 +232,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="ForgetPassword.aspx" />
     <Content Include="Xoa.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -413,6 +420,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.designer.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Xoa.aspx.cs">
       <DependentUpon>Xoa.aspx</DependentUpon>

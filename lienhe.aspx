@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Lienhe" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LienHe.aspx.cs" Inherits="BTLWEB2.WebForm2" %>
+﻿<%@ Page Title="Liên hệ" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LienHe.aspx.cs" Inherits="BTLWEB2.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <div class="w3-container w3-row-padding" style="margin: 150px 2%">
     <div class="w3-half w3-light-grey" style="">

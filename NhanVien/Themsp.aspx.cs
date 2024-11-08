@@ -25,9 +25,6 @@ namespace BTLWEB2
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
-
             con();
             lblmaloai.Visible = false;
 
@@ -37,7 +34,7 @@ namespace BTLWEB2
                 if (DropDownList1.Items[i].Selected) lblmaloai.Text = DropDownList1.Items[i].Value.ToString();
             }
 
-            string q = "select *from Loai where MaLoai='" + lblmaloai.Text + "'";
+            string q = "select * from Loai where MaLoai='" + lblmaloai.Text + "'";
             SqlCommand cmd = new SqlCommand(q, conn);
             SqlDataReader r = cmd.ExecuteReader();
             if (r.Read())
@@ -45,12 +42,7 @@ namespace BTLWEB2
                 lbltenloai.Text = r[1].ToString();
             }
             conn.Close();
-
-
-
-
-
-
+            
         }
 
         protected void btnthem_Click(object sender, EventArgs e)
@@ -86,17 +78,17 @@ namespace BTLWEB2
             cmd.Parameters.Add(new SqlParameter("ghichu", txtghichu.Text));
             cmd.ExecuteNonQuery();
             conn.Close();
-            Response.Redirect("QuanTri.aspx");
+            Response.Redirect("~/NhanVien/QuanTri.aspx");
         }
 
         protected void btnhuythem_Click(object sender, EventArgs e)
         {
-            Response.Redirect("QuanTri.aspx");
+            Response.Redirect("~/NhanVien/QuanTri.aspx");
         }
 
         protected void btbloai_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Themloaisp.aspx");
+            Response.Redirect("~/NhanVien/Themloaisp.aspx");
         }
     }
 }

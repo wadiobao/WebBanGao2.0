@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
@@ -11,7 +12,7 @@ namespace BTLWEB2
 {
     public partial class WebForm7 : System.Web.UI.Page
     {
-        
+
         SqlConnection con;
         SqlCommand cmd;
         HttpCookie ck;
@@ -19,7 +20,7 @@ namespace BTLWEB2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack)
             {
                 //kiem tran cookies tendangnhap
@@ -32,6 +33,7 @@ namespace BTLWEB2
                 }
             }
         }
+
 
         protected void SetLogin(string username, string des)
         {
@@ -46,19 +48,40 @@ namespace BTLWEB2
             {
                 themSP();
                 Response.Redirect("ThanhToan.aspx");
-            }else if (des == "ctt")
+            }
+            else if (des == "ctt")
             {
                 themSP();
-                Response.Redirect("ChiTiet.aspx?data="+
+                Response.Redirect("ChiTiet.aspx?data=" +
                     Server.UrlEncode(Session["masp"].ToString()) +
-                    "&loai="+
+                    "&loai=" +
                     Server.UrlEncode(Session["loaisp"].ToString()));
                 huySession();
             }
-            else { 
-            Response.Redirect("Trangchu.aspx");
+            else
+            {
+                Response.Redirect("Trangchu.aspx");
             }
         }
+
+        //Hàm mã hóa mật khẩu
+        protected string CaesarEncryption(string str)
+        {
+            int shift = 3;
+            StringBuilder encoded = new StringBuilder();
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                char c = str[i];
+
+                // Dịch chuyển ký tự, đảm bảo không vượt quá 'Z'
+                char shiftedChar = (char)((c - 'A' + shift) % 26 + 'A');
+                encoded.Append(shiftedChar);
+            }
+
+            return encoded.ToString();
+        }
+
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string des = Request.QueryString["des"];
@@ -68,62 +91,60 @@ namespace BTLWEB2
             }
             else
             {
+                //ket noi databse
                 string conStr = WebConfigurationManager.ConnectionStrings["cthd"].ConnectionString;
-                using (con = new SqlConnection(conStr))
+                con = new SqlConnection(conStr);
+                con.Open();
+
+                using (cmd = new SqlCommand("sp_Dangnhap", con))
                 {
-                    con.Open();
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@tdn", txtUsername.Text);
+                    cmd.Parameters.AddWithValue("@mk", CaesarEncryption(txtPassword.Text));
 
-                    using (cmd = new SqlCommand("sp_Dangnhap", con))
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
                     {
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@tdn", txtUsername.Text);
-                        cmd.Parameters.AddWithValue("@mk", txtPassword.Text);
+                        reader.Read();
+                        string loaiTaiKhoan = reader["LoaiTaiKhoan"].ToString();
 
-                        SqlDataReader reader = cmd.ExecuteReader();
-
-                        if (reader.HasRows)
+                        if (loaiTaiKhoan == "KhachHang")
                         {
-                            reader.Read();
-                            string loaiTaiKhoan = reader["LoaiTaiKhoan"].ToString();
+                            // Xử lý thông tin khách hàng
+                            Session["MaKhach"] = reader["MaKhach"].ToString();
+                            Session["TenKhach"] = reader["TenKhach"].ToString();
+                            Session["DiaChi"] = reader["DiaChi"].ToString();
+                            Session["DienThoai"] = reader["DienThoai"].ToString();
+                            Session["Quyen"] = "1";
 
-                            if (loaiTaiKhoan == "KhachHang")
-                            {
-                                // Xử lý thông tin khách hàng
-                                Session["MaKhach"] = reader["MaKhach"].ToString();
-                                Session["TenKhach"] = reader["TenKhach"].ToString();
-                                Session["DiaChi"] = reader["DiaChi"].ToString();
-                                Session["DienThoai"] = reader["DienThoai"].ToString();
-                                Session["Quyen"] = "1";
-
-                                SetLogin(txtUsername.Text,des);
-                            }
-                            else if (loaiTaiKhoan == "NhanVien")
-                            {
-                                // Xử lý thông tin nhân viên
-                                Session["MaNV"] = reader["MaNV"].ToString();
-                                Session["TenNV"] = reader["TenNV"].ToString();
-                                Session["GioiTinh"] = reader["GioiTinh"].ToString();
-                                Session["DiaChiNV"] = reader["DiaChi"].ToString();
-                                Session["DienThoaiNV"] = reader["DienThoai"].ToString();
-                                Session["NgaySinh"] = reader["NgaySinh"].ToString();
-                                Session["Quyen"] = "0";
-
-                                SetLogin(txtUsername.Text,des);
-                            }
-
-                            lblMessage.Text = "Tên đăng nhập hoặc mật khẩu không đúng!";
+                            SetLogin(txtUsername.Text, des);
                         }
-                        else
+                        else if (loaiTaiKhoan == "NhanVien")
                         {
-                            lblMessage.Text = "Tên đăng nhập hoặc mật khẩu không đúng!";
+                            // Xử lý thông tin nhân viên
+                            Session["MaNV"] = reader["MaNV"].ToString();
+                            Session["TenNV"] = reader["TenNV"].ToString();
+                            Session["GioiTinh"] = reader["GioiTinh"].ToString();
+                            Session["DiaChiNV"] = reader["DiaChi"].ToString();
+                            Session["DienThoaiNV"] = reader["DienThoai"].ToString();
+                            Session["NgaySinh"] = reader["NgaySinh"].ToString();
+                            Session["Quyen"] = "0";
+
+                            SetLogin(txtUsername.Text, des);
                         }
+
+                        lblMessage.Text = "Tên đăng nhập hoặc mật khẩu không đúng!";
                     }
-                    con.Close();
+                    else
+                    {
+                        lblMessage.Text = "Tên đăng nhập hoặc mật khẩu không đúng!";
+                    }
                 }
+                con.Close();
+
             }
         }
-
-
 
         protected void lbRegister_Click(object sender, EventArgs e)
         {
@@ -163,5 +184,9 @@ namespace BTLWEB2
             Session.Remove("anh");
         }
 
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForgetPassword.aspx");
+        }
     }
 }

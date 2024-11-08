@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChungToi.aspx.cs" Inherits="BTLWEB2.WebForm3" %>
+﻿<%@ Page Title="Về chúng tôi" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChungToi.aspx.cs" Inherits="BTLWEB2.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -107,7 +107,7 @@
             <div class="  col-xl-4 col-md-4 co-sm-6 mb-5">
                 <img src="./img/anhdaidien.jpg" style="border-radius: 50%;width: 100%;"
                      alt="a">
-                <h2 class="text-center " style="font-weight: bold;">Ông Lương Văn Giang</h2>
+                <h2 class="text-center " style="font-weight: bold;">Ông Trần Nguyễn Minh Hùng</h2>
                 <p class="text-center" style="font-style: italic;">Tổng Giám Đốc IMG</p>
             </div>
         </div>

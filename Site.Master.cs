@@ -31,6 +31,7 @@ namespace BTLWEB2
                     shopcart.Visible = false;
                 }
             }
+            
         }
 
         private SqlConnection connect(string database)
@@ -56,8 +57,9 @@ namespace BTLWEB2
                 {
                     cmd = new SqlCommand($"Select * from GioHang where MaKhach='{Session["MaKhach"].ToString()}'", con);
                 }
-                
-                    SqlDataReader reader = cmd.ExecuteReader();
+                int sl = 0;   
+
+                SqlDataReader reader = cmd.ExecuteReader();
                     Panel panel = new Panel();
 
                     if (!reader.HasRows)
@@ -67,7 +69,7 @@ namespace BTLWEB2
                     }
                     else
                     {
-
+                   
                         while (reader.Read())
                         {
                             Label label = new Label();
@@ -83,8 +85,10 @@ namespace BTLWEB2
                                 $"</div>" +
                                 $"</div>";
                             panel.Controls.Add(label);
+                        sl += int.Parse(reader[3].ToString());
                         }
                     }
+                    sltg.InnerText= sl.ToString();
                     spdc.Controls.Add(panel);
                 
                 
@@ -133,6 +137,8 @@ namespace BTLWEB2
                 Response.Redirect("Login.aspx?des=tt");
             }
         }
+
+        
     }
         
 }

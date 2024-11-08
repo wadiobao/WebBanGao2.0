@@ -15,6 +15,15 @@ namespace BTLWEB2
     {
 
         /// <summary>
+        /// topsell control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl topsell;
+
+        /// <summary>
         /// hot control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,24 @@ namespace BTLWEB2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl hot;
+
+        /// <summary>
+        /// allsp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl allsp;
+
+        /// <summary>
+        /// ddlLoai control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlLoai;
 
         /// <summary>
         /// sp control.

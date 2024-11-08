@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ThanhToan.aspx.cs" Inherits="BTLWEB2.WebForm6" %>
+﻿<%@ Page Title="Thanh toán" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ThanhToan.aspx.cs" Inherits="BTLWEB2.WebForm6" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <head>
     <meta charset="UTF-8">
@@ -101,7 +101,7 @@
                 <!-- Phương thức thanh toán 1 -->
                 <div class="payment-method">
                     <input type="radio" name="payment" id="momo" checked>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/MoMo_Logo.png" alt="MoMo">
+                    <img src="logo/Logo-MoMo-Circle.jpg" alt="MoMo">
                     <label for="momo">Ví MoMo</label>
                     
                 </div>
@@ -109,7 +109,7 @@
                 <!-- Phương thức thanh toán 2 -->
                 <div class="payment-method">
                     <input type="radio" name="payment" id="cash">
-                    <img src="https://www.svgrepo.com/show/335466/money.svg" alt="Cash">
+                    <img src="icon/cash.jpg" alt="Cash">
                     <label for="cash">Thanh toán khi nhận hàng</label>
                     
                 </div>
@@ -129,11 +129,15 @@
             </div>
 
                 <!-- Nút đặt hàng -->
-                <button class="checkout-btn">ĐẶT HÀNG</button>
+                <button class="checkout-btn" onclick="showMessage()">ĐẶT HÀNG</button>
             </div>
         </div>
     </div>
 </div>
-
+    <script type="text/javascript">
+        function showMessage() {
+            alert("Đã đặt hàng thành công!");
+        }
+    </script>
 </body>
 </asp:Content>

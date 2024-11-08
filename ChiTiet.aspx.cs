@@ -15,10 +15,12 @@ namespace BTLWEB2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             string loaisp = Request.QueryString["loai"]; 
             string data = Request.QueryString["data"];
-            chiTiet(data);
+            this.Title = chiTiet(data);
             spLienQuan(loaisp);
+            
         }
 
         private SqlConnection connect(string database)
@@ -28,8 +30,9 @@ namespace BTLWEB2
             return con;
         }
 
-        private void chiTiet(string data)
+        private string chiTiet(string data)
         {
+            string sp="";
             SqlConnection con = connect("cthd");
             con.Open();
             SqlCommand cmd = new SqlCommand($"Select * from sanpham where MaSP='{data}'", con);
@@ -39,7 +42,12 @@ namespace BTLWEB2
                 img1.Src = ResolveUrl( reader[9].ToString());
                 nsanpham.InnerText = reader[2].ToString();
                 gsanpham.InnerText = reader[7].ToString() + "đ";
+                mota.InnerText = reader[10].ToString();
+                motact.InnerText = mota.InnerText;
+                bctensp.InnerText = reader[2].ToString();
+                sp = nsanpham.InnerText;
             }
+            return sp;
         }
 
         protected void mua_click(object sender, EventArgs e)
@@ -103,7 +111,7 @@ namespace BTLWEB2
                     $"      <img src='{ResolveUrl(reader[9].ToString())}' loading='lazy' alt='' style='width: 100%;max-height: 300px' class=''>  " +
                     $"     <div style='margin-left: 10px;' >    " +
                     $"     <h3>{reader[2].ToString()}</h3>     " +
-                    $"     <p>túi 1kg</p>    " +
+                    $"     <p>Túi 5kg</p>    " +
                     $"     <p id='price'>{reader[7].ToString()}đ</p>  " +
                     $"     </div>  " +
                     $"   </a> " +
@@ -128,6 +136,8 @@ namespace BTLWEB2
             sqlCommand.Parameters.AddWithValue("@anh", img1.Src.ToString());
             sqlCommand.ExecuteNonQuery();
             sql.Close();
+
+            
         }
 
         private void themSP1(string des)

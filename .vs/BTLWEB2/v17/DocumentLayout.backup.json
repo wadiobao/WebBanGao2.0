@@ -1,17 +1,41 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Ph\u00E1t tri\u1EC3n \u1EE9ng d\u1EE5ng web 2\\WebApplication3\\",
+  "WorkspaceRootPath": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|d:\\ph\u00E1t tri\u1EC3n \u1EE9ng d\u1EE5ng web 2\\webapplication3\\register.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|solutionrelative:register.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|c:\\users\\84967\\documents\\zalo received files\\webapplication3\\nhanvien\\themsp.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|solutionrelative:nhanvien\\themsp.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|d:\\ph\u00E1t tri\u1EC3n \u1EE9ng d\u1EE5ng web 2\\webapplication3\\register.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|solutionrelative:register.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|c:\\users\\84967\\documents\\zalo received files\\webapplication3\\nhanvien\\themloaisp.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|solutionrelative:nhanvien\\themloaisp.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|d:\\ph\u00E1t tri\u1EC3n \u1EE9ng d\u1EE5ng web 2\\webapplication3\\profile.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|c:\\users\\84967\\documents\\zalo received files\\webapplication3\\nhanvien\\themloaisp.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|solutionrelative:nhanvien\\themloaisp.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|c:\\users\\84967\\documents\\zalo received files\\webapplication3\\nhanvien\\quantri.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|solutionrelative:nhanvien\\quantri.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|c:\\users\\84967\\documents\\zalo received files\\webapplication3\\nhanvien\\quantri.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|solutionrelative:nhanvien\\quantri.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|solutionrelative:login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\forgetpassword.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|solutionrelative:forgetpassword.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\forgetpassword.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|solutionrelative:forgetpassword.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\profile.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{EAD021E9-69E0-4F8A-9C87-94779B0AC0C3}|BTLWEB2.csproj|solutionrelative:profile.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
@@ -22,50 +46,144 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Themsp.aspx",
+              "DocumentMoniker": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\NhanVien\\Themsp.aspx",
+              "RelativeDocumentMoniker": "NhanVien\\Themsp.aspx",
+              "ToolTip": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\NhanVien\\Themsp.aspx",
+              "RelativeToolTip": "NhanVien\\Themsp.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-03T06:11:56.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Themloaisp.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\NhanVien\\Themloaisp.aspx.cs",
+              "RelativeDocumentMoniker": "NhanVien\\Themloaisp.aspx.cs",
+              "ToolTip": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\NhanVien\\Themloaisp.aspx.cs",
+              "RelativeToolTip": "NhanVien\\Themloaisp.aspx.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-03T06:11:47.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Themloaisp.aspx",
+              "DocumentMoniker": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\NhanVien\\Themloaisp.aspx",
+              "RelativeDocumentMoniker": "NhanVien\\Themloaisp.aspx",
+              "ToolTip": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\NhanVien\\Themloaisp.aspx",
+              "RelativeToolTip": "NhanVien\\Themloaisp.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-03T06:11:02.189Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Register.aspx.cs",
-              "DocumentMoniker": "D:\\Ph\u00E1t tri\u1EC3n \u1EE9ng d\u1EE5ng web 2\\WebApplication3\\Register.aspx.cs",
-              "RelativeDocumentMoniker": "Register.aspx.cs",
-              "ToolTip": "D:\\Ph\u00E1t tri\u1EC3n \u1EE9ng d\u1EE5ng web 2\\WebApplication3\\Register.aspx.cs",
-              "RelativeToolTip": "Register.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "QuanTri.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\NhanVien\\QuanTri.aspx.cs",
+              "RelativeDocumentMoniker": "NhanVien\\QuanTri.aspx.cs",
+              "ToolTip": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\NhanVien\\QuanTri.aspx.cs",
+              "RelativeToolTip": "NhanVien\\QuanTri.aspx.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAcwLEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T08:59:38.985Z",
+              "WhenOpened": "2024-11-03T06:09:06.48Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Register.aspx",
-              "DocumentMoniker": "D:\\Ph\u00E1t tri\u1EC3n \u1EE9ng d\u1EE5ng web 2\\WebApplication3\\Register.aspx",
-              "RelativeDocumentMoniker": "Register.aspx",
-              "ToolTip": "D:\\Ph\u00E1t tri\u1EC3n \u1EE9ng d\u1EE5ng web 2\\WebApplication3\\Register.aspx",
-              "RelativeToolTip": "Register.aspx",
+              "DocumentIndex": 3,
+              "Title": "QuanTri.aspx",
+              "DocumentMoniker": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\NhanVien\\QuanTri.aspx",
+              "RelativeDocumentMoniker": "NhanVien\\QuanTri.aspx",
+              "ToolTip": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\NhanVien\\QuanTri.aspx",
+              "RelativeToolTip": "NhanVien\\QuanTri.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-23T08:58:56.017Z",
+              "WhenOpened": "2024-11-03T06:04:43.22Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Profile.aspx",
-              "DocumentMoniker": "D:\\Ph\u00E1t tri\u1EC3n \u1EE9ng d\u1EE5ng web 2\\WebApplication3\\Profile.aspx",
-              "RelativeDocumentMoniker": "Profile.aspx",
-              "ToolTip": "D:\\Ph\u00E1t tri\u1EC3n \u1EE9ng d\u1EE5ng web 2\\WebApplication3\\Profile.aspx",
-              "RelativeToolTip": "Profile.aspx",
+              "DocumentIndex": 5,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\Login.aspx",
+              "RelativeDocumentMoniker": "Login.aspx",
+              "ToolTip": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\Login.aspx",
+              "RelativeToolTip": "Login.aspx",
               "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-23T08:56:41.255Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-02T14:01:56.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ForgetPassword.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\ForgetPassword.aspx.cs",
+              "RelativeDocumentMoniker": "ForgetPassword.aspx.cs",
+              "ToolTip": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\ForgetPassword.aspx.cs",
+              "RelativeToolTip": "ForgetPassword.aspx.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAiwK8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T13:56:57.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ForgetPassword.aspx",
+              "DocumentMoniker": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\ForgetPassword.aspx",
+              "RelativeDocumentMoniker": "ForgetPassword.aspx",
+              "ToolTip": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\ForgetPassword.aspx",
+              "RelativeToolTip": "ForgetPassword.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-02T13:56:21.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Profile.aspx",
+              "DocumentMoniker": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\Profile.aspx",
+              "RelativeDocumentMoniker": "Profile.aspx",
+              "ToolTip": "C:\\Users\\84967\\Documents\\Zalo Received Files\\WebApplication3\\Profile.aspx",
+              "RelativeToolTip": "Profile.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-02T13:54:31.786Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 336,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 41,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             }
           ]
         }

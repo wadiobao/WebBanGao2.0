@@ -62,11 +62,96 @@
             width: 460px;
             height: 60px;
         }
+        
+         table
+    {
+        border-collapse: collapse;
+      
+     
+    }
+    table th
+    {
+        background-color:#808000;
+        color: #dcefd5;
+    }
+    table th ,table td
+    {
+        
+       
+        border: 1px solid #C1CCB1;
+        padding: 10px 20px;
+    }
+    
+
+    table tr:nth-child(2n+1)
+    {
+        background-color: #DFE1DC;
+    }
+    table tr:hover
+    {
+        
+        background-color: #DEF3CA;
+    }
+    .btn:hover
+    {
+        background-color: #2A2A00;
+        color: white;
+        
+    
+
+    }
+    .button
+    {
+        border: 0px;
+        border-radius: 15px;
+        
+      
+       left:15px;
+    }
+    .btn2{
+        text-align:left;
+    }
+
+       div .image
+    {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        text-align: center;
+         border-radius: 15px;
+    }
+    div .image img
+    {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+        .auto-style1 {
+            width: 1536px;
+            margin-left: 0px;
+        }
+        img{
+                 width :100px 
+              
+         }
+
+    div .size
+    {
+         width: 100px;
+ height: 100px;
+        overflow:auto;
+    }
         </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            <div class="w3-container" style="margin-top:50px;font-size:24px"> 
+        <div class="w3-breadcrumb w3-light-grey">
+            <a href="Quantri.aspx" class="w3-hover-opacity" style="font-weight:normal">Quản lí sản phẩm</a> &gt;
+            <span class="" style="font-weight:bold">Thông tin</span>
+        </div>
+    </div>
             <table aria-pressed="undefined" align="center"  Width="600px">
                 <tr>
                     <td colspan="2" Text-align="center" style="text-align: center; font-size: large; color: #808000;"><b style="text-align: center">&nbsp;Thông tin sản phẩm</b></td >

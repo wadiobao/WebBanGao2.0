@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
@@ -124,7 +125,22 @@ namespace BTLWEB2
             }
 
         }
+        protected string CaesarEncryption(string str)
+        {
+            int shift = 3;
+            StringBuilder encoded = new StringBuilder();
 
+            for (int i = 0; i < str.Length; i++)
+            {
+                char c = str[i];
+
+                // Dịch chuyển ký tự, đảm bảo không vượt quá 'Z'
+                char shiftedChar = (char)((c - 'A' + shift) % 26 + 'A');
+                encoded.Append(shiftedChar);
+            }
+
+            return encoded.ToString();
+        }
         protected void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -221,8 +237,8 @@ namespace BTLWEB2
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@tdn", username);
-                    cmd.Parameters.AddWithValue("@mkc", txtOldPassword.Text);
-                    cmd.Parameters.AddWithValue("@mkm", txtNewPassword.Text);
+                    cmd.Parameters.AddWithValue("@mkc", CaesarEncryption(txtOldPassword.Text));
+                    cmd.Parameters.AddWithValue("@mkm", CaesarEncryption(txtNewPassword.Text));
 
                     int result = (int)cmd.ExecuteScalar();
                     if (result == 1)

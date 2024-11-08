@@ -60,6 +60,15 @@ namespace BTLWEB2
         protected global::System.Web.UI.HtmlControls.HtmlButton shopcart;
 
         /// <summary>
+        /// sltg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sltg;
+
+        /// <summary>
         /// search control.
         /// </summary>
         /// <remarks>

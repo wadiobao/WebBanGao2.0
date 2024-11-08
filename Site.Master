@@ -9,8 +9,34 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="shortcut icon" type="image/png" href="./img/logo1.png" />
-    <link rel="stylesheet" href="userScript/style.css"/>
+    <link rel="stylesheet" href="userScript/style.css" >
     <title><%: Page.Title %></title>
+    <style>
+        /* Định dạng vòng tròn hiển thị số lượng sản phẩm */
+        #shopcart {
+            position: relative;
+            font-size: 24px;
+            color: #002266; /* Màu xanh đậm */
+        }
+
+        #shopcart .badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #FF5722; /* Màu cam */
+            color: white;
+            border-radius: 50%;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .center-button {
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center;    /* Căn giữa theo chiều dọc nếu cần */
+                      /* Căn giữa toàn bộ chiều cao trang */
+        }
+    </style>
 </head>
 <body>
     
@@ -40,17 +66,29 @@
                     <p class="w3-right" style="display: inline-block;font-weight: bold;"> &times;</p>
                 </button>
                 <h3 id="spdc" style="" runat="server"></h3>
-                <h3 id="nosp" style="margin:20px 30%;" visible="false" runat="server">GIỎ HÀNG TRỐNG</h3>
-                <asp:Button ID="ttbtn" runat="server" OnClick="ThanhToan_Click" Text="Thanh toán"/>
+                <h3 id="nosp" style="margin:20px 30%;font-family:'Times New Roman';font-weight:bold" visible="false" runat="server">GIỎ HÀNG TRỐNG</h3>
+                <div class="center-button">
+                    <asp:Button ID="ttbtn" runat="server" CssClass="w3-button w3-round-large w3-green" OnClick="ThanhToan_Click" Text="Thanh toán" />
+                </div>
             </div>
-            <button class="w3-bar-item  w3-right fa fa-shopping-cart"
-                    style="margin:10px 20px;cursor: pointer;background-color: transparent" onclick="openRightMenu();return false" id="shopcart" runat="server"></button>
+            <button class="w3-bar-item w3-right fa fa-shopping-cart"
+                style="margin: 10px 20px; cursor: pointer; background-color: transparent"
+                onclick="openRightMenu();return false" id="shopcart" runat="server">
+                <span class="badge" id="sltg" runat="server">0</span>
+            </button>
 
             <div class="w3-right">
                 <div id="searchbar" style="display:none">
                 <asp:TextBox runat="server" ID="search" 
-                    CssClass="w3-bar-item w3-input w3-round-xxlarge" placeholder="Search..." Width="80%" style="margin-top: 0px; "></asp:TextBox>
+                    CssClass="w3-bar-item w3-input w3-round-xxlarge" 
+                    placeholder="Search..." 
+                    Width="80%" style="margin-top: 0px; "
+                    OnKeyDown="return enterKeyPress(event);">
+                    </asp:TextBox>
+                    
                  </div>   
+                
+
                 <button id="close-btn" class="fa fa-close"
                         style="margin:20px 20px;background-color:transparent;border: none; cursor: pointer;display: none;"
                         onclick="searchClose('close-btn');return false"></button>
@@ -61,7 +99,7 @@
             <a href="LienHe.aspx" class="w3-bar-item  w3-right" style="margin:10px 0">LIÊN HỆ </a>
             <div class="w3-bar-item"></div>
             <a href="ChungToi.aspx" class="w3-bar-item  w3-right" style="margin:10px 0">GIỚI THIỆU</a>
-            <a href="SanPham.aspx" class="w3-bar-item  " style="margin:10px 0;font-weight: bold;" id="khnv" runat="server">SHOP NOW!</a>
+            <a href="SanPham.aspx" class="w3-bar-item  " style="margin:10px 0;font-weight: bold;" id="khnv" runat="server">MUA NGAY!</a>
             <a href="Trangchu.aspx" class="w3-bar-item  w3-right" style="margin:10px 0;">TRANG CHỦ</a>
             <a href="Login.aspx" class="w3-bar-item  w3-right" style="margin:10px 0;color:red;padding-left:0;padding-right:0" id="dnbtn" runat="server">ĐĂNG NHẬP</a>
         </div>
@@ -129,6 +167,19 @@
     </asp:PlaceHolder>
                
     </form>
-       
+       <script type="text/javascript">
+           function enterKeyPress(e) {
+               if (e.keyCode === 13) { // 13 là mã phím Enter
+                   e.preventDefault(); // Ngăn chặn hành động mặc định
+                   var searchText = document.getElementById('<%= search.ClientID %>').value;
+                   if (searchText.trim() !== "") { // Kiểm tra nếu có nội dung
+                       window.location.href = 'SanPham.aspx?tensp=' + encodeURIComponent(searchText);
+                   } else {
+                       alert("Vui lòng nhập nội dung tìm kiếm.");
+                   }
+                   return false; // Ngăn form tự động submit nếu có
+               }
+           }
+</script>
 </body>
 </html>

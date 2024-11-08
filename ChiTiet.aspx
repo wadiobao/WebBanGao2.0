@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChiTiet.aspx.cs" Inherits="BTLWEB2.WebForm5" %>
+﻿<%@ Page Title="Sản phẩm" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ChiTiet.aspx.cs" Inherits="BTLWEB2.WebForm5" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chi tiết sản phẩm</title>
-    <link rel="stylesheet" href="userScript/style.css">
+    <link rel="stylesheet" href="./userScript/style.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,17 +16,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
       /* Reset CSS */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-      }
+    
 
       /* Body */
       body {
-        font-family: Arial, sans-serif;
-
+        
         line-height: 1.5;
         color: #333;
       }
@@ -83,11 +77,19 @@
       #a1 {
         border: 1px solid #d9b38c;
       }
+      
     </style>
   </head>
  
-   <body>
-    <div class="" style="margin-top: 100px; margin-left: 7%;">
+    <div class="w3-container" style="margin-top:100px;font-size:24px"> 
+        <div class="w3-breadcrumb w3-light-grey">
+            <a href="Trangchu.aspx" class="w3-hover-opacity" style="font-weight:normal">Trang chủ</a> &gt;
+            <a href="SanPham.aspx" class="w3-hover-opacity" style="font-weight:normal">Sản phẩm</a> &gt;
+            <span class="" style="font-weight:bold" id="bctensp" runat="server"></span>
+        </div>
+    </div>
+   
+    <div class="" style="margin-left: 7%;">
       <main>
         <section class="product-detail">
           <div class="row">
@@ -104,14 +106,11 @@
                 <h1 id="nsanpham" style="font-weight: bold;" runat="server"></h1>
                 <p id="gsanpham" style="color: red;font-weight: bold;" runat="server"></p>
                 <h5>Mô Tả:</h5>
-                <ul>
-                  <p>
-                    Gạo lúa tôm ST25 túi 5kg có hạt dài, trắng trong, không bạc
-                    bụng, khi nấu cơm dẻo thơm, khi để nguội cơm vẫn ngon, không
-                    bị cứng. Hàm lượng đạm trong gạo cao (10% protein), cao gắp
-                    rưởi gạo...
+                
+                  <p id="mota" runat="server">
+                    
                   </p>
-                </ul>
+                
                   <asp:ScriptManager ID="ScriptManager1" runat="server" />
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
                 <ContentTemplate>
@@ -123,8 +122,8 @@
                         </ContentTemplate>
             </asp:UpdatePanel>
                   <div style="display:flex">
-                  <asp:Button ID="mua" class="btn btn-primary" style="width: 40%;margin:5%" Text="Mua ngay" runat="server" OnClick="mua_click" Font-Bold="true" Width="500px"/>
-                  <asp:Button ID="them" class="btn btn-primary" style="width: 40%;margin:5%" Text="Thêm vào giỏ hàng" OnClick="them_click" runat="server" Font-Bold="true"/>                       
+                  <asp:Button ID="mua" class="btn btn-primary" style="width: 40%;margin:5%;font-size:24px" Text="Mua ngay" runat="server" OnClick="mua_click" Font-Bold="true" Height="60px"/>
+                  <asp:Button ID="them" class="btn btn-primary" style="width: 40%;margin:5%;font-size:24px" Text="Thêm vào giỏ hàng" OnClick="them_click" runat="server" Font-Bold="true" OnClientClick="showMessage()"/>                       
                       </div>
               </div>
             </div>
@@ -199,26 +198,7 @@
                 class="w3-button w3-large w3-display-topright"
                 >&times;</span
               >
-              <p>
-                Gạo lúa tôm ST25 túi 5kg có hạt dài, trắng trong, không bạc
-                bụng, khi nấu cơm dẻo thơm, khi để nguội cơm vẫn ngon, không bị
-                cứng. Hàm lượng đạm trong gạo cao (10% protein), cao gắp rưởi
-                gạo thường, vì vậy sẽ no trước khi đầy bụng.
-              </p>
-
-              <p>
-                Lúa ST25 sẽ được gieo trồng luân canh 1 vụ lúa 1 vụ nuôi tôm.
-                Lúa ST25 sẽ được trồng trực tiếp ở vùng nước lợ trong mùa mưa,
-                sau vụ nuôi tôm. Gạo ST25 do được trồng trong khu vực nuôi tôm,
-                cây lúa được cung cấp từ những chất dinh dưỡng tự nhiên còn xót
-                lại sau vụ nuôi tôm nên hạt cơm rất đậm đà, thơm ngon dẻ chắc.
-              </p>
-
-              <p>
-                Đặc biệt trong khu vực nuôi tôm nước lợ, người nông dân không sử
-                dụng hóa chất để làm ảnh hưởng đến con tôm nên gạo lúa tôm ST25
-                túi 5kg rất an toàn cho sức khỏe người tiêu dùng.
-              </p>
+              <p id="motact" runat="server"></p>
             </div>
 
             <div
@@ -242,10 +222,15 @@
     </div>
 
     <div class="w3-container" style="margin: 3% 7%;">
-      <h1 id="top-seller" style="font-size: 54px;">Sản phẩm liên quan</h1><br />
+      <h1 id="topsell" style="font-size: 54px;">Sản phẩm liên quan</h1><br />
       <div class="w3-row-padding" id="lienquan" runat="server">
         
       </div>
     </div>
-       </body>
+    <script type="text/javascript">
+        function showMessage() {
+            alert("Đã thêm vào giỏ hàng thành công!");
+        }
+    </script>
+       
 </asp:Content>

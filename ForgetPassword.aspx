@@ -1,13 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="BTLWEB2.WebForm7" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ForgetPassword.aspx.cs" Inherits="BTLWEB2.WebForm10" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-<!DOCTYPE html>
+    <!DOCTYPE html>
 
 <html>
 <head>
-    <title>Đăng nhập</title>
-    <link rel="icon" href="../Image/logo.png"/>
-
+    <title>Quên Mật Khẩu</title>
+    <link rel="icon" href="../Image/logo.png" />
     <style type="text/css">
         /* Đặt font chữ toàn bộ trang */
         body {
@@ -18,7 +16,7 @@
             color: #333; /* Màu chữ dễ nhìn */
         }
 
-        /* Căn giữa form đăng nhập */
+        /* Căn giữa form quên mật khẩu */
         .formcontainer {
             max-width: 500px;
             margin: 100px auto; /* Căn giữa và thêm khoảng cách trên/dưới */
@@ -39,8 +37,8 @@
             box-sizing: border-box;
         }
 
-        /* Nút bấm đăng nhập */
-        input[type="submit"], .button {
+        /* Nút bấm */
+        input[type="submit"], .button, .asp-button {
             background-color: #0bc54a;
             color: white;
             padding: 12px 20px;
@@ -51,9 +49,9 @@
             font-size: 16px;
         }
 
-        input[type="submit"]:hover, .button:hover {
-            background-color: #0eff5f;
-        }
+            input[type="submit"]:hover, .button:hover, .asp-button:hover {
+                background-color: #0eff5f;
+            }
 
         /* Phong cách cho liên kết */
         .dkbtn {
@@ -61,11 +59,11 @@
             text-decoration: none;
         }
 
-        .dkbtn:hover {
-            text-decoration: underline;
-        }
+            .dkbtn:hover {
+                text-decoration: underline;
+            }
 
-        /* Tiêu đề Đăng nhập */
+        /* Tiêu đề Quên mật khẩu */
         h1, h2, h3, h4, h5, h6 {
             color: #FF6F00; /* Màu cam cho tiêu đề */
             text-align: center;
@@ -75,35 +73,56 @@
         table {
             width: 100%; /* Đảm bảo form chiếm toàn bộ chiều rộng */
         }
-
     </style>
 </head>
 <body>
-    <div class="formcontainer">
-        <div>
-            <table cellpadding="3" cellspacing="3" class="auto-style1">
+    <form>
+        <div class="formcontainer">
+            <table cellpadding="3" cellspacing="3">
                 <tr>
-                    <td>&nbsp;</td>
                     <td>
-                        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Đăng nhập"></asp:Label>
+                        <asp:LinkButton ID="lbtnLogin" runat="server" OnClick="lbtnLogin_Click" CssClass="dkbtn">Quay lại</asp:LinkButton>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <h2>QUÊN MẬT KHẨU</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bạn là:</td>
+                    <td>
+                        <asp:Panel ID="Panel1" runat="server">
+                            <asp:RadioButtonList ID="rdolistRole" runat="server" AutoPostBack="True" RepeatDirection="Horizontal">
+                                <asp:ListItem>Nhân viên</asp:ListItem>
+                                <asp:ListItem>Khách hàng</asp:ListItem>
+                            </asp:RadioButtonList>
+                        </asp:Panel>
                     </td>
                 </tr>
                 <tr>
                     <td>Tên đăng nhập:</td>
                     <td>
-                        <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtUsername" runat="server" Width="100%"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td>Mật khẩu:</td>
+                    <td>Mã:</td>
                     <td>
-                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="txtID" runat="server" Width="100%"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td>Mật khẩu mới:</td>
                     <td>
-                        <asp:CheckBox ID="chkRememberInfor" runat="server" Text="Remember me" />
+                        <asp:TextBox ID="txtNewPassword" runat="server" Width="100%" TextMode="Password"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nhập lại mật khẩu:</td>
+                    <td>
+                        <asp:TextBox ID="txtRepeatNewPassword" runat="server" Width="100%" TextMode="Password"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -115,25 +134,18 @@
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Đăng nhập" />
+                        <asp:Button ID="btnChangePassword" runat="server" CssClass="asp-button" Text="Đổi mật khẩu" OnClick="btnChangePassword_Click" />
                     </td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
-                    <td>
-                        <asp:LinkButton ID="LinkButton1" runat="server" ForeColor="#FF6600" OnClick="LinkButton1_Click">Quên mật khẩu?</asp:LinkButton>
-                    </td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>
-                        Bạn chưa có tài khoản? <asp:LinkButton ID="lbRegister" runat="server" OnClick="lbRegister_Click" CssClass="dkbtn">Đăng ký</asp:LinkButton>
+                    <td>Bạn chưa có tài khoản?
+                        <asp:LinkButton ID="lbtnRegister" runat="server" CssClass="dkbtn" OnClick="lbtnRegister_Click">Đăng ký</asp:LinkButton>
                     </td>
                 </tr>
             </table>
         </div>
-    </div>
+    </form>
 </body>
 </html>
-
 </asp:Content>

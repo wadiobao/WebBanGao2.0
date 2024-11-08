@@ -134,7 +134,7 @@
     <div class="formcontainer">
         <!-- Login/Logout Buttons Section -->
         <div class="form-section">
-            <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-secondary" OnClick="btnLogin_Click" Text="Đăng nhập" />
+            <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-secondary" OnClick="btnLogin_Click" Text="Đăng nhập" Visible="false"/>
             <asp:Button ID="btnLogout" runat="server" CssClass="btn btn-secondary" OnClick="btnLogout_Click" Text="Đăng xuất" />
         </div>
 

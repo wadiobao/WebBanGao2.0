@@ -15,6 +15,15 @@ namespace BTLWEB2
     {
 
         /// <summary>
+        /// bctensp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bctensp;
+
+        /// <summary>
         /// img1 control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace BTLWEB2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl gsanpham;
+
+        /// <summary>
+        /// mota control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mota;
 
         /// <summary>
         /// ScriptManager1 control.
@@ -103,6 +121,15 @@ namespace BTLWEB2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button them;
+
+        /// <summary>
+        /// motact control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl motact;
 
         /// <summary>
         /// lienquan control.
